@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashing_Example", "Hashing_Example\Hashing_Example.csproj", "{8C923209-E3CE-48F7-BA55-5FCC03220DE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashing_Example_Console", "Hashing_Example_Console\Hashing_Example_Console.csproj", "{1C399DBD-082F-446E-A1AE-629CC75AF66E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hashing_Example", "Hashing_Example\Hashing_Example.csproj", "{8C923209-E3CE-48F7-BA55-5FCC03220DE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{8C923209-E3CE-48F7-BA55-5FCC03220DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C923209-E3CE-48F7-BA55-5FCC03220DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C923209-E3CE-48F7-BA55-5FCC03220DE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C399DBD-082F-446E-A1AE-629CC75AF66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C399DBD-082F-446E-A1AE-629CC75AF66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C399DBD-082F-446E-A1AE-629CC75AF66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C399DBD-082F-446E-A1AE-629CC75AF66E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
