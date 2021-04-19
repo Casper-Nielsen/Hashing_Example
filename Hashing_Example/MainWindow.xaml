@@ -11,12 +11,25 @@
         <c:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="54,47,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding SelectedHashing}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="54,47,0,0" VerticalAlignment="Top" Width="228" ItemsSource="{Binding HashingOptions}" SelectedItem="{Binding SelectedHashing}" DisplayMemberPath="Name"/>
         <TextBox HorizontalAlignment="Left" Margin="495,47,0,0" Text="{Binding Key}" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
-        <TextBox HorizontalAlignment="Left" Margin="495,70,0,0" Text="{Binding Message}" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
-        <TextBox HorizontalAlignment="Left" Margin="495,170,0,0" Text="{Binding MAC}" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsEnabled="False"/>
-        <RadioButton Content="ASCII" HorizontalAlignment="Left" Margin="518,220,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton Content="HEX" HorizontalAlignment="Left" Margin="518,240,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="495,101,0,0" Text="{Binding Message}" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <TextBox HorizontalAlignment="Left" Margin="495,170,0,0" Text="{Binding MAC}" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"  Width="228" Height="57"/>
+        <RadioButton GroupName="MAC" Content="ASCII" HorizontalAlignment="Left" Margin="430,172,0,0" VerticalAlignment="Top" IsChecked="{Binding ASCII}" Command="{Binding OutputChangedCommand}"/>
+        <RadioButton GroupName="MAC" Content="Base64" HorizontalAlignment="Left" Margin="430,192,0,0" VerticalAlignment="Top" IsChecked="{Binding Base64}" Command="{Binding OutputChangedCommand}" RenderTransformOrigin="0.284,0.404"/>
+        <RadioButton GroupName="MAC" Content="HEX" HorizontalAlignment="Left" Margin="430,212,0,0" VerticalAlignment="Top" Command="{Binding OutputChangedCommand}"/>
+        <Label Content="Hashing Type" HorizontalAlignment="Left" Margin="54,21,0,0" VerticalAlignment="Top" />
+        <Label Content="Key" HorizontalAlignment="Left" Margin="461,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Message" HorizontalAlignment="Left" Margin="433,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="MAC" HorizontalAlignment="Left" Margin="495,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="Time: " HorizontalAlignment="Left" Margin="435,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Time}" HorizontalAlignment="Left" Margin="477,260,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="87,171,0,0" Text="{Binding VMAC}" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Height="57"/>
+        <Label Content="Validate MAC" HorizontalAlignment="Left" Margin="87,145,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Valid}" HorizontalAlignment="Left" Margin="87,233,0,0" VerticalAlignment="Top"/>
+        <RadioButton GroupName="Validate" Content="ASCII" HorizontalAlignment="Left" Margin="25,173,0,0" VerticalAlignment="Top" IsChecked="{Binding VASCII}" Command="{Binding ValidMACChangedCommand}"/>
+        <RadioButton GroupName="Validate" Content="Base64" HorizontalAlignment="Left" Margin="25,193,0,0" VerticalAlignment="Top" IsChecked="{Binding VBase64}" Command="{Binding ValidMACChangedCommand}" RenderTransformOrigin="0.284,0.404"/>
+        <RadioButton GroupName="Validate" Content="HEX" HorizontalAlignment="Left" Margin="25,213,0,0" VerticalAlignment="Top" Command="{Binding ValidMACChangedCommand}"/>
 
     </Grid>
 </Window>

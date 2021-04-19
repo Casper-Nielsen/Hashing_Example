@@ -6,12 +6,19 @@ namespace Hashing_Example
 {
     class HashingType
     {
-        private int _id;
+        private string _type;
 
-        public int Id
+        public string Type
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _type; }
+            set { _type = value; }
+        }
+        private bool _managed;
+
+        public bool Managed
+        {
+            get { return _managed; }
+            set { _managed = value; }
         }
         private string _name;
 
@@ -19,11 +26,6 @@ namespace Hashing_Example
         {
             get { return _name; }
             set { _name = value; }
-        }
-        public HashingType() { }
-        public HashingType(string name,int id) {
-            this.Id = id;
-            this.Name = name;
         }
     }
 }

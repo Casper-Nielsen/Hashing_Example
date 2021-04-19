@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Linq;
 
 namespace Hashing_Example
 {
-    class Hashing : IHashing
+    class HmacHashing : IHashing
     {
-        private HashAlgorithm hash;
-        
-        public Hashing()
+        private HMAC hmac;
+
+        public HmacHashing()
         {
             SetHashingType("sha1");
         }
-        public Hashing(string hashingType)
+        public HmacHashing(string hashingType)
         {
             SetHashingType(hashingType);
         }
@@ -27,30 +27,32 @@ namespace Hashing_Example
         public void SetHashingType(string hashingType)
         {
             // Switch case to find the hashing class
-            hash = hashingType switch
+            hmac = hashingType switch
             {
-                "sha1" => new SHA1Managed(),
-                "sha256" => new SHA256Managed(),
-                "sha384" => new SHA384Managed(),
-                "sha512" => new SHA512Managed(),
-                _ => new SHA1Managed(),
+                "sha1" => new HMACSHA1(),
+                "sha256" => new HMACSHA256(),
+                "sha384" => new HMACSHA384(),
+                "sha512" => new HMACSHA512(),
+                "md5" => new HMACMD5(),
+                _ => new HMACSHA1(),
             };
         }
 
         /// <summary>
-        /// hashes the message with the hashing type that is set
+        /// hashes the message with the hashing type that is set using the key
         /// </summary>
         /// <param name="message">the message that will be hashed</param>
-        /// <param name="key">not used</param>
+        /// <param name="key">the key for the hashing</param>
         /// <returns>the hashed data</returns>
-        public long ComputeMAC(ref byte[] message, byte[] key = null)
+        public long ComputeMAC(ref byte[] message, byte[] key)
         {
             Stopwatch stopwatch = new Stopwatch();
             byte[] mac = new byte[0];
             try
             {
+                hmac.Key = key;
                 stopwatch.Start();
-                mac = hash.ComputeHash(message);
+                mac = hmac.ComputeHash(message);
                 stopwatch.Stop();
             }
             catch { }
