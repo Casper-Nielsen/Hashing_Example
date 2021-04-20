@@ -27,7 +27,7 @@ namespace Hashing_Example
         public void SetHashingType(string hashingType)
         {
             // Switch case to find the hashing class
-            hash = hashingType switch
+            hash = hashingType.ToLower() switch
             {
                 "sha1" => new SHA1Managed(),
                 "sha256" => new SHA256Managed(),

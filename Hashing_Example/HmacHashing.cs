@@ -27,7 +27,7 @@ namespace Hashing_Example
         public void SetHashingType(string hashingType)
         {
             // Switch case to find the hashing class
-            hmac = hashingType switch
+            hmac = hashingType.ToLower() switch
             {
                 "sha1" => new HMACSHA1(),
                 "sha256" => new HMACSHA256(),

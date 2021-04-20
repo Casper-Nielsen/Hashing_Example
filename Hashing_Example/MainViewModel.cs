@@ -154,7 +154,7 @@ namespace Hashing_Example
                 new HashingType() { Managed=false, Type = "SHA512", Name = "SHA512" },
                 new HashingType() { Managed=false, Type = "MD5", Name = "MD5" },
                 new HashingType() { Managed=true, Type = "SHA1", Name = "SHA1 Managed" },
-                new HashingType() { Managed=true, Type = "SHA256", Name = "SHA256 Managed" },
+                new HashingType() { Managed=true, Type = "c", Name = "SHA256 Managed" },
                 new HashingType() { Managed=true, Type = "SHA384", Name = "SHA384 Managed" },
                 new HashingType() { Managed=true, Type = "SHA512", Name = "SHA512 Managed" },
             };
